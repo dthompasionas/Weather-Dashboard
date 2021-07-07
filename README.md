@@ -23,7 +23,7 @@ THEN I am again presented with current and future conditions for that city
 
 ![Alt text](/assets/images/my-weather-dash.png?raw=true "myweatherdash")
 
-Deployed page URL: 
+Deployed page URL: https://dthompasionas.github.io/weather-dashboard/
 
 GitHub URL: https://github.com/dthompasionas/weather-dashboard
 
