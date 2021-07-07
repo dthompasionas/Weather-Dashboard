@@ -19,9 +19,12 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 
+### Screenshot
 
-Deployed page URL:
+![Alt text](/assets/images/my-weather-dash.png?raw=true "myweatherdash")
 
-GitHub URL:
+Deployed page URL: 
+
+GitHub URL: https://github.com/dthompasionas/weather-dashboard
 
 
