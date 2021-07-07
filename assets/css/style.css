@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
+header {
+    padding-bottom: 15px;
+    background-color: rgba(26, 26, 104, 0.89);
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+header h1 {
+    font-size: 50px;
+    font-family: 'Amatic SC', cursive;
+}
+
+.search-header {
+    font-size: 40px;
+    padding-left: 20px;
+    font-family: 'Amatic SC', cursive;
+    
+    
+}
+
+.btn {
+    background-color: rgba(26, 26, 104, 0.89);
+    color: white;
+}
+
+#city {
+    padding-left: 10px;
+} 
+
+.input-group {
+    padding-left: 20px;
+    width: 60%;
+    
+}
+
+
+.col {
+    background: rgba(26, 26, 104, 0.89);
+    border: solid white;
+    display: grid;
+    justify-content: center;
+    height: 350px;
+    
+}
+
+
