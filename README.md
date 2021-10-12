@@ -13,6 +13,7 @@ This is a weather app using the open weather API
 * [Contribute](#contribute)
 * [Questions](#questions)
 
+<<<<<<< HEAD
 # License 
 This project is licensed with a MIT license.
 
@@ -20,6 +21,7 @@ This project is licensed with a MIT license.
 
 # Installation
 The following necessary dependencies are required to run this app: N/A 
+
 
 # Tests
 The following command is needed to run test: Open in default browser
@@ -31,6 +33,8 @@ In order to use this app, Type in any city or state to see results.
 contact below
 
 # Screenshot:
+
+![](/assets/images/my-weather-dash.png)
 
 # Questions
 Contact me with any questions here:
