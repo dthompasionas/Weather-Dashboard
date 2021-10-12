@@ -1,16 +1,15 @@
 
-
 //*custom API Key
 let apiKey = "af6e7cee0e853a37f2ef23f0b8781824"
 
 let city;
 let resultsCard = $(".card-body");
 let searchBtn = $("#searchCity");
+let info = $(".info");
 
 
 //*listed items
 let searchHistory = [];
-
 
 
 
@@ -75,7 +74,7 @@ function fetchData() {
             };
         })
         
-        //* forcast cards
+        //* forecast cards
         $.ajax({
             url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey,
             method: "GET"
@@ -86,10 +85,10 @@ function fetchData() {
                 let weatherCard = $("<div>").attr("class", "weekcard col five text-white p-4");
                 $("#forecast").append(weatherCard);
                 
-                let todaysDate = new Date(response.list[i * 8].dt * 1000);                
+                let todaysDate = new Date(response.list[i * 5].dt * 1000);                
                 weatherCard.append($("<h4>").html(todaysDate.toLocaleDateString()));
                 
-                let iconCode = response.list[i * 8].weather[0].icon;
+                let iconCode = response.list[i * 5].weather[0].icon;
                 
                 let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
                 weatherCard.append($("<img>").attr("src", iconURL));
@@ -105,8 +104,8 @@ function fetchData() {
 
     //*empties main card after each search
     resultsCard.empty();
-    //*empties week forcast
-    $("#forcastcards").empty();
+    //*empties week forecast
+    $("#forecast").empty();
      
 };
 
@@ -124,7 +123,7 @@ function fetchItems() {
             break;
           }
         
-        cityListButton = $("<a>").attr({
+            cityListButton = $("<a>").attr({
             class: "list-group-item list-group-item-action",
             href: "#"
         });

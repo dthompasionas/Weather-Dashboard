@@ -20,6 +20,10 @@ header h1 {
     font-family: 'Amatic SC', cursive;
 }
 
+.search {
+    margin-top: 20px;
+}
+
 .search-header {
     font-size: 40px;
     padding-left: 20px;
@@ -33,24 +37,34 @@ header h1 {
     color: white;
 }
 
+.info {
+    background: rgb(223, 223, 223);
+    box-shadow: 0 0px 10px 0;
+}
+
 #city {
     padding-left: 10px;
 } 
 
 .input-group {
     padding-left: 20px;
-    width: 60%;
+    width: 90%;
     
 }
 
 
-.col {
+.weekcard {
     background: rgba(26, 26, 104, 0.89);
-    border: solid white;
     display: grid;
     justify-content: center;
-    height: 350px;
-    
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 1px gray;
+    margin: 10px;
+}
+
+.weekcard p {
+    font-size: 20px;
 }
 
 
