@@ -34,7 +34,7 @@ contact below
 
 # Screenshot:
 
-![](/assets/images/my-weather-dash.png)
+![](./assets/images/my-weather-dash.png)
 
 # Questions
 Contact me with any questions here:
