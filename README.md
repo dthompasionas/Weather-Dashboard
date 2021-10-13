@@ -13,7 +13,7 @@ This is a weather app using the open weather API
 * [Contribute](#contribute)
 * [Questions](#questions)
 
-<<<<<<< HEAD
+
 # License 
 This project is licensed with a MIT license.
 
