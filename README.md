@@ -2,6 +2,8 @@
 
 https://github.com/dthompasionas/weather-dashboard
 
+Deployed: https://dthompasionas.github.io/weather-dashboard/
+
 # Description
 This is a weather app using the open weather API
 
