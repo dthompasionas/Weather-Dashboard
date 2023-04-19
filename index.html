@@ -65,11 +65,16 @@
           <form class="d-flex" role="search">
             <input
               class="form-control me-2"
+              id="city"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button
+              class="btn btn-outline-success"
+              id="search-city"
+              type="button"
+            >
               Search
             </button>
           </form>
@@ -84,15 +89,17 @@
     </div>
     <!-- forecast selector end -->
 
-    <div class="container">
+    <section class="column-controller container">
       <main class="row">
-        <!--weather results-->
-        <div class="col-md-8 col-sm-12">
-          <div class="p-2">
-            <div class="card info">
+        <!--weather results/left column-->
+        <div class="col-sm-12 col-md-8">
+          <!-- <div class="card info">
               <div class="card-body"></div>
+            </div> -->
+          <div class="main-weather">
+            <div class="main-weather-body">
+              <!--weather info here from js-->
             </div>
-            <!--h2 tag here from js-->
           </div>
 
           <div class="row">
@@ -100,7 +107,23 @@
           </div>
 
           <!--5 day cards-->
-          <div id="forecast" class="row"></div>
+          <div id="forecast" class="container">
+            <div class="row">
+              <div class="forecast-1 col">1</div>
+              <div class="forecast-2 col">1</div>
+              <div class="forecast-3 col">1</div>
+              <div class="forecast-4 col">1</div>
+              <div class="forecast-5 col">1</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- right side column -->
+        <div class="col-sm-12 col-md-4">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            perferendis, numquam quos quo vero iusto?
+          </p>
         </div>
 
         <!--search area-->
@@ -127,7 +150,7 @@
           
         </div> -->
       </main>
-    </div>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script

@@ -7,6 +7,19 @@
   display: none;
 }
 
+/* page column controller */
+.column-controller {
+  margin-top: 20px;
+}
+
+/* main weather card */
+.main-weather {
+}
+
+.main-weather-body {
+  padding: 20px;
+}
+
 .forecast-selector {
   height: 40px;
   width: 100%;
