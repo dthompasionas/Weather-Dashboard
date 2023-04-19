@@ -6,6 +6,7 @@ let resultsCard = $(".main-weather-body");
 let searchBtn = $("#search-city");
 let info = $(".info");
 const mainCard = document.querySelector(".main-weather");
+const forecastWrap = $(".forecast-wrap");
 
 //*listed items
 let searchHistory = [];
@@ -90,8 +91,8 @@ function fetchData() {
     }).then(function (response) {
       for (i = 0; i < 5; i++) {
         //* creates columns
-        let weatherCard = $("<div>").attr("class", "weekday col five");
-        $("#forecast").append(weatherCard);
+        let weatherCard = $("<div>").attr("class", "weekday col");
+        $(".forecast-wrap").prepend(weatherCard);
 
         let todaysDate = new Date(response.list[i * 5].dt * 1000);
         weatherCard.append($("<h4>").html(todaysDate.toLocaleDateString()));
@@ -115,7 +116,7 @@ function fetchData() {
   //*empties main card after each search
   resultsCard.empty();
   //*empties week forecast
-  $("#forecast").empty();
+  $(".forecast-wrap").empty();
 }
 
 fetchItems();
