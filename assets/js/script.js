@@ -30,16 +30,24 @@ function fetchData() {
     let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
 
     // main card CSS
-    mainCard.style.backgroundColor = "yellow";
+    mainCard.style.background = "rgb(22, 150, 241)";
+    mainCard.style.borderRadius = "15px";
 
     //* displays city in main card
-    let name = $("<h2>").html(city + date);
+    let name = $("<h3>").addClass("city-name").html(city);
     resultsCard.prepend(name);
+
+    let mainDate = $("<p>").addClass("main-date").html(date);
+    resultsCard.prepend(mainDate);
 
     resultsCard.append($("<img>").attr("src", iconURL));
     //* converts from Kelvin
     let temp = Math.round((response.main.temp - 273.15) * 1.8 + 32);
-    resultsCard.append($("<p>").html("Temperature: " + temp + " &#8457"));
+    resultsCard.append(
+      $("<p>")
+        .addClass("main-temp")
+        .html(temp + " &#8457")
+    );
 
     let humidity = response.main.humidity;
     resultsCard.append($("<p>").html("Humidity: " + humidity));
@@ -89,24 +97,31 @@ function fetchData() {
         apiKey,
       method: "GET",
     }).then(function (response) {
+      // reveals the forecast title
+      let forecastTitle = document.querySelector(".forecast-title");
+      forecastTitle.classList.remove("hide");
+
       for (i = 0; i < 5; i++) {
         //* creates columns
-        let weatherCard = $("<div>").attr("class", "weekday col");
+        let weatherCard = $("<div>").attr("class", "weekday card col");
         $(".forecast-wrap").prepend(weatherCard);
 
+        // adds the date to each weekday card
         let todaysDate = new Date(response.list[i * 5].dt * 1000);
         weatherCard.append($("<h4>").html(todaysDate.toLocaleDateString()));
-
+        // adds the icons to each weekday card
         let iconCode = response.list[i * 5].weather[0].icon;
 
         let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
         weatherCard.append($("<img>").attr("src", iconURL));
+
         //*converts it from Kelvin
         let temp = Math.round(
           (response.list[i * 8].main.temp - 273.15) * 1.8 + 32
         );
         weatherCard.append($("<p>").html("Temp: " + temp + " &#8457"));
 
+        // adds the humidity level to each card
         let humidity = response.list[i * 8].main.humidity;
         weatherCard.append($("<p>").html("Humidity: " + humidity));
       }
@@ -167,3 +182,19 @@ $("#search-city").click(function () {
     $(".list-group").append(cityListButton);
   }
 });
+
+// google maps
+// let map;
+
+// google maps init
+// async function initMap() {
+//   //@ts-ignore
+//   const { Map } = await google.maps.importLibrary("maps");
+
+//   map = new Map(document.getElementById("map"), {
+//     center: { lat: -34.397, lng: 150.644 },
+//     zoom: 8,
+//   });
+// }
+
+// initMap();
