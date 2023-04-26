@@ -3,6 +3,8 @@ let apiKey = "af6e7cee0e853a37f2ef23f0b8781824";
 
 let city;
 let resultsCard = $(".main-weather-body");
+// let resultsCardLeft = $(".main-left");
+// let resultsCardRight = $(".main-right");
 let searchBtn = $("#search-city");
 let info = $(".info");
 const mainCard = document.querySelector(".main-weather");
@@ -29,31 +31,58 @@ function fetchData() {
     let iconCode = response.weather[0].icon;
     let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
 
+    // gets current time object
+    let currentTime = new Date();
+    // retrieving current hour from the date object
+    let hours = currentTime.getHours();
+    // retrieving current minute from the date object
+    let minutes = currentTime.getMinutes();
+
+    // let seconds = currentTime.getSeconds();
+
+    // format the time string
+    let timeNow = hours + ":" + minutes;
+
     // main card CSS
     mainCard.style.background = "rgb(22, 150, 241)";
     mainCard.style.borderRadius = "15px";
 
     //* displays city in main card
+    let row = $("<div>").addClass("row");
+    resultsCard.append(row);
+
+    let resultsCardLeft = $("<div>").addClass("main-left col");
+    row.append(resultsCardLeft);
+
+    let resultsCardRight = $("<div>").addClass("main-right col");
+    row.append(resultsCardRight);
+
+    let tempContainer = $("<div>").addClass("temp-container");
+    resultsCardLeft.append(tempContainer);
+
     let name = $("<h3>").addClass("city-name").html(city);
     resultsCard.prepend(name);
 
     let mainDate = $("<p>").addClass("main-date").html(date);
-    resultsCard.prepend(mainDate);
+    resultsCardLeft.prepend(mainDate);
 
-    resultsCard.append($("<img>").attr("src", iconURL));
+    let timeIs = $("<p>").addClass("current-time").html(timeNow);
+    resultsCardLeft.prepend(timeIs);
+
+    tempContainer.append($("<img>").addClass("temp-img").attr("src", iconURL));
     //* converts from Kelvin
     let temp = Math.round((response.main.temp - 273.15) * 1.8 + 32);
-    resultsCard.append(
+    tempContainer.append(
       $("<p>")
         .addClass("main-temp")
-        .html(temp + " &#8457")
+        .html(temp + "<span>&nbsp;°F</span>")
     );
 
     let humidity = response.main.humidity;
-    resultsCard.append($("<p>").html("Humidity: " + humidity));
+    resultsCardRight.append($("<p>").html("Humidity: " + humidity));
 
     let windSpeed = response.wind.speed;
-    resultsCard.append($("<p>").html("Wind Speed: " + windSpeed));
+    resultsCardRight.append($("<p>").html("Wind Speed: " + windSpeed));
 
     //* identifying lon and lat
     //* grabs coordinates from api object
@@ -72,20 +101,20 @@ function fetchData() {
       method: "GET",
       //* displays UV in main card
     }).then(function (response) {
-      resultsCard.append(
+      resultsCardRight.append(
         $("<p>").html("UV Index: <span>" + response.value + "</span>")
       );
 
-      if (response.value <= 2) {
-        //* changing UV color
-        $("span").attr("class", "btn btn-outline-success");
-      }
-      if (response.value > 2 && response.value <= 5) {
-        $("span").attr("class", "btn btn-outline-warning");
-      }
-      if (response.value > 5) {
-        $("span").attr("class", "btn btn-outline-danger");
-      }
+      // if (response.value <= 2) {
+      //   //* changing UV color
+      //   $("span").attr("class", "btn btn-outline-success");
+      // }
+      // if (response.value > 2 && response.value <= 5) {
+      //   $("span").attr("class", "btn btn-outline-warning");
+      // }
+      // if (response.value > 5) {
+      //   $("span").attr("class", "btn btn-outline-danger");
+      // }
     });
 
     //* forecast cards
