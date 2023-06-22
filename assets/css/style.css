@@ -118,13 +118,22 @@ body {
 }
 
 .btn {
-  background-color: rgba(26, 26, 104, 0.89);
+  /* background-color: rgba(26, 26, 104, 0.89); */
   color: white;
+}
+
+.navbar button {
+  background-color: rgba(26, 26, 104, 0.89);
 }
 
 .info {
   background: rgb(223, 223, 223);
   box-shadow: 0 0px 10px 0;
+}
+
+.main-temp span {
+  background: none;
+  border: none;
 }
 
 #city {

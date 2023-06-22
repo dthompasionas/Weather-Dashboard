@@ -109,16 +109,16 @@ function fetchData() {
         $("<p>").html("UV Index: <span>" + response.value + "</span>")
       );
 
-      // if (response.value <= 2) {
-      //   //* changing UV color
-      //   $("span").attr("class", "btn btn-outline-success");
-      // }
-      // if (response.value > 2 && response.value <= 5) {
-      //   $("span").attr("class", "btn btn-outline-warning");
-      // }
-      // if (response.value > 5) {
-      //   $("span").attr("class", "btn btn-outline-danger");
-      // }
+      if (response.value <= 5) {
+        //* changing UV color
+        $("span").attr("class", "btn btn-success");
+      }
+      if (response.value > 5 && response.value <= 6) {
+        $("span").attr("class", "btn btn-warning");
+      }
+      if (response.value > 8) {
+        $("span").attr("class", "btn btn-danger");
+      }
     });
 
     //* forecast cards
