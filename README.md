@@ -36,7 +36,7 @@ contact below
 
 # Screenshot:
 
-![](./assets/images/my-weather-dashboard.png)
+![](./assets/images/weather-dashboard.png)
 
 # Questions
 Contact me with any questions here:
