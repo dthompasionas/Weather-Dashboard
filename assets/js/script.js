@@ -78,6 +78,10 @@ function fetchData() {
         .html(temp + "<span>&nbsp;°F</span>")
     );
 
+    // let feelsLike = main.feels_like;
+    // resultsCardLeft.append($("<p>").addClass("feels-like").html(feelsLike));
+    // console.log(main.feels_like.value);
+
     let humidity = response.main.humidity;
     resultsCardRight.append($("<p>").html("Humidity: " + humidity));
 
@@ -173,7 +177,7 @@ function fetchItems() {
   }
 
   for (i = 0; i < searchHistory.length; i++) {
-    if (i == 10) {
+    if (i == 5) {
       break;
     }
 

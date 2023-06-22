@@ -97,33 +97,33 @@
               <div class="card-body"></div>
             </div> -->
           <div class="main-weather">
-            <div class="main-weather-body">
+            <div class="main-weather-body container">
+              <!-- <div class="row">
+                <div class="main-left col"></div>
+                <div class="main-right col"></div>
+              </div> -->
+
               <!--weather info here from js-->
             </div>
           </div>
 
-          <div class="row">
+          <div class="forecast-title hide">
             <h4>5-Day Forecast:</h4>
           </div>
 
           <!--5 day cards-->
           <div id="forecast" class="container">
-            <div class="row">
-              <div class="forecast-1 col">1</div>
-              <div class="forecast-2 col">1</div>
-              <div class="forecast-3 col">1</div>
-              <div class="forecast-4 col">1</div>
-              <div class="forecast-5 col">1</div>
+            <div class="forecast-wrap row">
+              <!-- forecast cards created in JS -->
             </div>
           </div>
         </div>
 
         <!-- right side column -->
         <div class="col-sm-12 col-md-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            perferendis, numquam quos quo vero iusto?
-          </p>
+          <div class="map-container">
+            <div id="map"></div>
+          </div>
         </div>
 
         <!--search area-->
@@ -160,5 +160,12 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
+
+    <!-- google maps -->
+
+    <!-- <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkw7E6o4NHR_OxkMWhEtjWrH-3MhF5nKc&callback=initMap"
+    ></script> -->
   </body>
 </html>

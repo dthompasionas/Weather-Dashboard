@@ -3,8 +3,37 @@
   padding: 0;
 }
 
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(29, 113, 242, 1) 0%,
+    rgba(28, 156, 246, 1) 0%,
+    rgba(25, 195, 251, 1) 65%
+  );
+}
+
 .hide {
-  display: none;
+  display: none !important;
+}
+
+/* google map */
+#map {
+  height: 100%;
+}
+
+/* forecast amount selector */
+.forecast-selector {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(29, 113, 242, 1) 0%,
+    rgba(28, 156, 246, 1) 0%,
+    rgba(25, 195, 251, 1) 65%
+  );
+  /* background-color: rgba(2, 0, 36, 1); */
+  display: flex;
+  justify-content: center;
 }
 
 /* page column controller */
@@ -18,21 +47,74 @@
 
 .main-weather-body {
   padding: 20px;
+  color: white;
 }
 
-.forecast-selector {
-  height: 40px;
-  width: 100%;
+.city-name {
+  text-align: center;
+  background-color: rgba(4, 21, 68, 0.342);
+  padding: 10px;
+  text-transform: capitalize;
+}
 
-  background-color: rgba(26, 26, 104, 0.89);
+/* right side of the main card */
+.main-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.main-right p {
+}
+
+/* left side of the main card */
+
+.main-left p {
+  margin: 0;
+}
+
+.temp-container {
   display: flex;
   justify-content: center;
+  padding: 10px 0 35px 0;
 }
 
-.search-header {
-  font-size: 40px;
-  padding-left: 20px;
-  font-family: "Amatic SC", cursive;
+.main-temp {
+  font-size: 60px;
+}
+
+.main-temp span {
+  font-size: 35px;
+}
+
+.temp-img {
+  width: 80px;
+}
+
+/* forecast cards */
+.forecast-title {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0px 15px 0px;
+  border-radius: 25px 25px 0 0;
+  background: rgb(22, 150, 241);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: white;
+}
+
+.forecast-wrap {
+  color: white;
+  height: 300px;
+}
+
+.weekday {
+  background: rgb(22, 150, 241);
+  color: white;
+  padding: 15px;
+  border: none;
+  margin: 5px;
+  border-radius: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .btn {
@@ -54,7 +136,7 @@
   width: 90%;
 }
 
-.weekcard {
+/* .weekcard {
   background: rgba(26, 26, 104, 0.89);
   display: grid;
   justify-content: center;
@@ -66,4 +148,4 @@
 
 .weekcard p {
   font-size: 20px;
-}
+} */
