@@ -145,6 +145,32 @@ body {
   width: 90%;
 }
 
+@media screen and (max-width: 375px) {
+  .navbar-toggler {
+    background: none !important;
+    border: none;
+  }
+
+  .temp-container {
+    flex-direction: column;
+  }
+
+  .forecast-wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .forecast-wrap img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .forecast-wrap p {
+    font-size: 20px;
+  }
+}
+
 /* .weekcard {
   background: rgba(26, 26, 104, 0.89);
   display: grid;
