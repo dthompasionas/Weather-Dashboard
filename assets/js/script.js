@@ -140,10 +140,10 @@ function fetchData() {
         $(".forecast-wrap").prepend(weatherCard);
 
         // adds the date to each weekday card
-        let todaysDate = new Date(response.list[i * 5].dt * 1000);
+        let todaysDate = new Date(response.list[i * 8].dt * 1000);
         weatherCard.append($("<h4>").html(todaysDate.toLocaleDateString()));
         // adds the icons to each weekday card
-        let iconCode = response.list[i * 5].weather[0].icon;
+        let iconCode = response.list[i * 8].weather[0].icon;
 
         let iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
         weatherCard.append($("<img>").attr("src", iconURL));
